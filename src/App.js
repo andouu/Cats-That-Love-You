@@ -299,7 +299,6 @@ export default function App() {
       const res = await fetch(url);
       const imgBlob = await res.blob();
       const imgUrl = URL.createObjectURL(imgBlob);
-      console.log({ tag: randomTag });
 
       setPreviousCats((prev) => [...prev, imgBlob]);
       setCat(imgUrl);
@@ -310,8 +309,6 @@ export default function App() {
       alert('There was an error fetching cats :(');
     }
   };
-
-  const scrollRef = useHorizontalScroll();
 
   return (
     <main>
