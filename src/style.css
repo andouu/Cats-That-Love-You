@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+:root {
+  --accent: #fff4db;
+  --secondary: #ffe4a8;
+  --bg: #1f1f1f;
+  --fg: #424242;
+  --note: #828282;
+  --text: #1f1f1f;
+  --img-border-radius: 1px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  color: var(--accent);
+  font-family: 'Pangolin';
+}
+
+body {
+  background-color: var(--bg);
+}
+
+main {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto auto;
+  grid-template-areas:
+    'header'
+    'content'
+    'gallery'
+    'footer';
+}
+
+.header {
+  grid-area: 'header';
+  display: flex;
+  padding: 2.5rem 0;
+  justify-content: center;
+  border-bottom: 1px solid var(--fg);
+}
+
+.header > h1 {
+  font-size: 96px;
+  letter-spacing: -0.15;
+}
+
+.content {
+  grid-area: 'content';
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr;
+  grid-template-rows: 75% 25%;
+  grid-template-areas: 'img' 'btn';
+}
+
+.content > .cat-container {
+  grid-area: 'img';
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem 0;
+}
+
+.cat-img-container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cat-img-small {
+  height: 15rem;
+  border-radius: var(--img-border-radius);
+}
+
+.cat-img {
+  height: 22.5rem;
+  border-radius: var(--img-border-radius);
+}
+
+.note {
+  color: var(--note);
+  opacity: 1;
+}
+
+.content > .rest {
+  grid-area: 'btn';
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.generate-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.5rem;
+  width: 12.5rem;
+  height: 3.5rem;
+  background: var(--accent);
+  border-radius: 99px;
+  border: none;
+}
+
+.generate-btn:hover {
+  cursor: pointer;
+}
+
+.generate-btn > .paw-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: left;
+  height: 2.5rem;
+  width: 2.5rem;
+  font-size: 1.05rem;
+  background-color: var(--secondary);
+  border-radius: 99px;
+}
+
+.generate-btn > h2 {
+  color: var(--text);
+}
+
+.gallery {
+  width: 100%;
+  height: 10rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-top: 1px solid var(--fg);
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.gallery-empty {
+  height: 2.5rem;
+  border-top: 1px solid var(--fg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-cat-container:hover {
+  cursor: pointer;
+}
+
+.gallery-cat {
+  height: 7.5rem;
+  border-radius: var(--img-border-radius);
+}
+
+.footer {
+  border-top: 1px solid var(--fg);
+  grid-area: 'footer';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  height: 6rem;
+}
+
+.footer * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--note);
+  opacity: 1;
+  font-size: 0.85rem;
+}
+
+.github-link {
+  margin-left: 0.1rem;
+  text-decoration: underline;
+}
+
+.github-link:hover {
+  cursor: pointer;
+  color: var(--secondary);
+}
